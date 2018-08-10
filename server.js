@@ -54,11 +54,7 @@ app.put('/ingredients/:ingredientId', function(req, res){
           break;
         }
     }
-    if(!objectFound){
-      res.status(200).send({error:`Ingredient id not found`})
-    } else {
-      res.status(200).send(ingredients);
-    }
+    !objectFound ? res.status(200).send({error:`Ingredient id not found`}) : res.status(200).send(ingredients);
   }
 
 });
